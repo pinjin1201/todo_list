@@ -10,6 +10,7 @@ $(function() {
   const $add = $('.add')
   const $input = $('.add input')
   const $addBtn = $('.add .add-btn')
+
   let item = ['Buy Milk', 'Pay Phone Bill', 'Eat Vegetable']
 
   // render todo item 
@@ -43,7 +44,7 @@ $(function() {
 
   // add item to ToDo list
   $addBtn.on('click', function () {
-    const value = $input.val()
+    let value = $input.val()
     if (value.length > 25) return alert('字數請控制在 25 以內')
     if (value.trim()) {
       item.push(value)
