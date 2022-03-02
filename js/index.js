@@ -21,6 +21,15 @@ $(function() {
     })
     return content
   }
+
+  // add delete style
+  function addDeleteStyle(item) {
+    const liText = item.text()
+    item.text(`✂ ${liText}`)
+    item.css('background-color', '#a9a9a9')
+    item.attr('class', 'delete')
+  }
+
   // render and show todo item
   $ul.html(renderTodoList(item))
   const $li = $('ul li')
@@ -52,6 +61,22 @@ $(function() {
     }
   })
 
-  
+  // add delete style
+  $ul.on('click', 'li', function(event) {
+    const $this = $(this)
+    const deleteItem = $this.attr('class')
+    if (deleteItem === 'delete') return
+    
+    addDeleteStyle($this)
+  })
+
+  // remove todo item
+  $ul.on('click', '.delete', function(event) {
+    const $this = $(this)
+    const text = $this.text().slice(2)
+    const number = item.findIndex(name => name === text)
+    item.splice(number, 1)
+    $this.animate({marginLeft: '+=50'}, 400, function() {$this.fadeOut(100)})
+  })
 
 })
