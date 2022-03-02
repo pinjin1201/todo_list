@@ -22,6 +22,15 @@ $(function() {
     return content
   }
 
+  // add todo item
+  function addTodoItem(data) {
+    if (data.trim()) {
+      item.push(data)
+      $ul.html(renderTodoList(item))
+      $input.val('')
+    }
+  }
+
   // add delete style
   function addDeleteStyle(item) {
     const liText = item.text()
@@ -61,12 +70,8 @@ $(function() {
   $addBtn.on('click', function () {
     let value = $input.val()
     if (value.length > 25) return alert('字數請控制在 25 以內')
-    if (value.trim()) {
-      item.push(value)
-      $ul.html(renderTodoList(item))
-      $input.val('')
-    }
 
+    addTodoItem(value)
     renewAmount()
   })
 
@@ -85,6 +90,7 @@ $(function() {
     const text = $this.text().slice(2)
     const number = item.findIndex(name => name === text)
     item.splice(number, 1)
+    
     $this.animate({marginLeft: '+=50'}, 400, function() {
       $this.fadeOut(100).remove()
       renewAmount()
