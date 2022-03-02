@@ -30,6 +30,12 @@ $(function() {
     item.attr('class', 'delete')
   }
 
+  // renew amount text
+  function renewAmount() {
+    const li = $ul.children().length
+    $amount.text(li)
+  }
+
   // render and show todo item
   $ul.html(renderTodoList(item))
   const $li = $('ul li')
@@ -59,6 +65,8 @@ $(function() {
       item.push(value)
       $ul.html(renderTodoList(item))
     }
+
+    renewAmount()
   })
 
   // add delete style
@@ -76,7 +84,12 @@ $(function() {
     const text = $this.text().slice(2)
     const number = item.findIndex(name => name === text)
     item.splice(number, 1)
-    $this.animate({marginLeft: '+=50'}, 400, function() {$this.fadeOut(100)})
+    $this.animate({marginLeft: '+=50'}, 400, function() {
+      $this.fadeOut(100).remove()
+      renewAmount()
+    })
+
+    
   })
 
 })
