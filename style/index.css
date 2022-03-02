@@ -1,0 +1,116 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 5%;
+  font-size: 16px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: #778899;
+}
+
+main {
+  width: 350px;
+  background: #4682B4;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* title */
+.title .title-image {
+  color: #2F4F4F;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.title .title-text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.title-text .text {
+  font-size: 1.5em;
+}
+.title-text .amount {
+  color: #191970;
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  margin-left: 4px;
+  background: #fff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-bordr-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/* todo item */
+ul {
+  width: 100%;
+  margin-bottom: 30px;
+}
+ul li {
+  font-size: 1.5em;
+  padding: 10px 0 10px 30px;
+  text-align: left;
+  list-style: none;
+  background: #fff;
+  border-top: 2px solid #dcdcdc;
+  border-bottom: 1px solid #778899;
+}
+
+/* start button */
+button.start-btn {
+  display: block;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 8px 13px;
+  margin-left: 60%;
+  border: 0;
+  background: #5F9EA0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-bordr-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+
+/* add */
+main .add {
+  display: none;
+}
+.add input {
+  border-color: #000;
+  width: 245px;
+  height: 32px;
+  margin-right: 10px;
+  border: 2px solid #000;
+  background-color: #fff;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-bordr-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+.add button {
+  color: #000;
+  font-size: 1.1em;
+  padding: 5px 10px;
+  border: 0;
+  background: #DAA520;
+  -webkit-appearance: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-bordr-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+.add button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
