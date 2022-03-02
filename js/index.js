@@ -64,6 +64,7 @@ $(function() {
     if (value.trim()) {
       item.push(value)
       $ul.html(renderTodoList(item))
+      $input.val('')
     }
 
     renewAmount()
@@ -88,8 +89,6 @@ $(function() {
       $this.fadeOut(100).remove()
       renewAmount()
     })
-
-    
   })
 
 })
